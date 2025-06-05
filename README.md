@@ -77,13 +77,11 @@ npm run dev
 src/
 │
 ├── components/
-│   ├── MovieCard.jsx       
-│   ├── SearchBar.jsx       
-│
-├── pages/
-│   ├── Home.jsx            
-│   ├── Favourites.jsx       
-│   ├── MovieDetails.jsx    
+│   ├── Favouritelist.jsx       
+│   ├── Moviecard.jsx
+|   ├──Moviedetails.jsx
+|   ├──Navbar.jsx
+|   ├──Searchbar.jsx      
 │
 ├── App.jsx                 
 └── main.jsx                
@@ -91,41 +89,22 @@ src/
 ```
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Project is live [Here]()
-
-
-
-
+## Project is live [Here](https://search-my-movie-phi.vercel.app)
 
 
 ## Output :
 - Home Page:
-![Homepage Snapshot](Frontend/public/)
+![Homepage Snapshot](public/home.png)
 
+- Search Movie Page:
+![searchpage Snapshot](public/search.png)
+
+- Favourite Movie Page:
+![FavPage Snapshot](public/fav.png)
+
+
+- Movie Detail Page:
+![Detail Snapshot](public/detail.png)
 
 
 
