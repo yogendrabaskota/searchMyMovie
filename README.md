@@ -1,12 +1,144 @@
-# React + Vite
+# 🎬 Movie Finder App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple React application that allows users to:
 
-Currently, two official plugins are available:
+- 🔍 Search movies by name using the [OMDb API](https://www.omdbapi.com/)
+- ⭐ Add movies to Favourites
+- ❌ Remove movies from Favourites
+- 📌 Persist favourite movies in `localStorage` so they remain after refresh
+- 🎞️ View movie details on a dedicated page
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Features
+
+- Movie search powered by OMDb API  
+- Responsive and modern UI  
+- Add/remove favorites with one click  
+- LocalStorage integration to persist user favorites  
+- Navigation with React Router
+
+---
+
+## 📦 Technologies Used
+
+- React 
+- Vite 
+- Tailwind CSS 
+- React Router DOM 
+- Axios 
+- OMDb API 
+
+---
+
+
+## 🛠️ Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/yogendrabaskota/searchMyMovie.git
+cd searchMyMovie
+
+```
+
+### 2. Install dependencies
+Make sure you have Node.js installed. Then run:
+```bash
+npm install
+```
+
+### 3. Get your OMDb API Key
+- Go to [Omdb-Key](https://www.omdbapi.com/apikey.aspx)
+
+- Sign up for a free API key
+
+
+
+### 4. Set up environment variables
+Create a .env file in the root of your project and add:
+``` bash
+VITE_OMDB_API_KEY = YOUR_API_KEY
+
+```
+
+
+### 5. Run the development server
+```bash
+npm run dev
+```
+
+
+
+
+## Project Structure
+```bash
+src/
+│
+├── components/
+│   ├── MovieCard.jsx       
+│   ├── SearchBar.jsx       
+│
+├── pages/
+│   ├── Home.jsx            
+│   ├── Favourites.jsx       
+│   ├── MovieDetails.jsx    
+│
+├── App.jsx                 
+└── main.jsx                
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Project is live [Here]()
+
+
+
+
+
+
+## Output :
+- Home Page:
+![Homepage Snapshot](Frontend/public/)
+
+
+
+
+
+
+
+
+
+
+
+## Feedback
+  If you have any feedback, please reach out to me at yogendrabaskota18@gmail.com  
+
+
+
+
