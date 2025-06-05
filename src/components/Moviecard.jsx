@@ -1,15 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-const MovieCard = ({ movie, showAddButton = true, showRemoveButton = false, onRemove }) => {
+const MovieCard = ({ movie, onRemove }) => {
+  const [isFav, setIsFav] = useState(false);
+
+  useEffect(() => {
+    const storedFavs = JSON.parse(localStorage.getItem('favourites')) || [];
+    const alreadyFav = storedFavs.some((fav) => fav.imdbID === movie.imdbID);
+    setIsFav(alreadyFav);
+  }, [movie.imdbID]);
+
   const handleAddToFav = () => {
     const storedFavs = JSON.parse(localStorage.getItem('favourites')) || [];
-    const isAlreadyFav = storedFavs.some((fav) => fav.imdbID === movie.imdbID);
-    if (!isAlreadyFav) {
+    if (!storedFavs.some((fav) => fav.imdbID === movie.imdbID)) {
       const updatedFavs = [...storedFavs, movie];
       localStorage.setItem('favourites', JSON.stringify(updatedFavs));
+      setIsFav(true);
       alert(`${movie.Title} added to favourites!`);
-    } else {
-      alert('Movie already in favourites!');
     }
   };
 
@@ -17,6 +23,7 @@ const MovieCard = ({ movie, showAddButton = true, showRemoveButton = false, onRe
     const storedFavs = JSON.parse(localStorage.getItem('favourites')) || [];
     const updatedFavs = storedFavs.filter((fav) => fav.imdbID !== movie.imdbID);
     localStorage.setItem('favourites', JSON.stringify(updatedFavs));
+    setIsFav(false);
     if (onRemove) onRemove(movie.imdbID);
   };
 
@@ -38,20 +45,19 @@ const MovieCard = ({ movie, showAddButton = true, showRemoveButton = false, onRe
       </div>
 
       <div className="flex flex-col gap-2">
-        {showAddButton && (
+        {isFav ? (
+          <button
+            onClick={handleRemoveFromFav}
+            className="px-3 py-1 bg-red-600 text-white rounded hover:bg-red-700"
+          >
+            Remove from Fav
+          </button>
+        ) : (
           <button
             onClick={handleAddToFav}
             className="px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700"
           >
             Add to Fav
-          </button>
-        )}
-        {showRemoveButton && (
-          <button
-            onClick={handleRemoveFromFav}
-            className="px-3 py-1 bg-red-600 text-white rounded hover:bg-red-700"
-          >
-            Remove
           </button>
         )}
       </div>
